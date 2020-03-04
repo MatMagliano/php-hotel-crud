@@ -10,7 +10,7 @@
                 <h2>Tutte le Stanze</h2>
                 <table class="table">
                     <thead>
-                        <th>ID</th>
+                        <th>STANZA N.°</th>
                         <th>FLOOR</th>
                         <th></th>
                         <th></th>
