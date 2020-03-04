@@ -1,14 +1,8 @@
 <?php 
     include 'server.php';
+    include 'partials/header.php';
  ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/app.css">
-    <title>Hotel</title>
-</head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -21,19 +15,17 @@
                         <th></th>
                         <th></th>
                         <tbody>
-                            <?php 
-                                if (!empty($rooms)) {
-                                    foreach ($rooms as $room) { ?>
-                                        <tr>
-                                            <td><?php echo $room['id'] ?></td>
-                                            <td><?php echo $room['floor'] ?></td>
-                                            <td><a href="">VIEW</a></td>
-                                            <td><a href="">UPDATE</a></td>
-                                            <td>DELETE</td>
-                                        </tr>
-                                <?php }
-                                }
-                                ?>
+                            <?php if (!empty($rooms)) { ?>
+                                <?php foreach ($rooms as $room) { ?>
+                                    <tr>
+                                        <td><?php echo $room['id'] ?></td>
+                                        <td><?php echo $room['floor'] ?></td>
+                                        <td><a href="show/show.php?id=<?php echo $room['id'] ?>">VIEW</a></td>
+                                        <td><a href="">UPDATE</a></td>
+                                        <td>DELETE</td>
+                                    </tr>
+                                <?php } ?>
+                            <?php } ?>
                             
                         </tbody>
                     </thead>
