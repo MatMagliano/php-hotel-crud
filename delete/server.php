@@ -7,16 +7,19 @@
   }
   $idRoom = $_POST['id'];
   $sql = "SELECT * FROM `stanze` WHERE `id` = '$idRoom'";
+  var_dump($sql);
 
-  $results = $conn->query($sql);
-  if ($results && $results->num_rows == 0) {
+
+
+  $result = $conn->query($sql);
+  if ($result && $result->num_rows == 0) {
     die('id non corretto');
   }
 
   $sql = "DELETE FROM `stanze` WHERE `id` = '$idRoom'";
-  $results = $conn->query($sql);
-  //var_dump($result);
-  if ($results) {
+  var_dump($sql);
+  $result = $conn->query($sql);
+  if ($result) {
     echo 'ok';
   } else {
     echo 'ko';
