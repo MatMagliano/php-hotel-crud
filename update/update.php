@@ -1,7 +1,19 @@
 <?php 
-  include 'server.php';
+  include __DIR__ . "/../db.php";
   include __DIR__ . '/../partials/header.php';
 
+  if (!empty($_GET['id'])) {
+    $idRoom = $_GET['id'];
+  }
+  $sql = "SELECT * FROM `stanze` WHERE `id` = $idRoom";
+    $results = $conn->query($sql);
+
+    if ($results && $results->num_rows > 0) {
+        $room = $results->fetch_assoc();
+    }
+    else{
+      die('id non esistente');
+    }
 
 ?>
 <div class="container">
@@ -22,7 +34,7 @@
         </div>
         <div class="form-group">
           <input type="hidden" name="id" value="">
-          <input class="btn btn-submit form-control" type="submit" name="Salva" value="">
+          <input class="btn btn-primary form-control" type="submit"  value="Salva">
         </div>
       </form>
     </div>
