@@ -7,5 +7,6 @@
     $host = "http://localhost:8888/";
     $folder = "php-hotel-crud/";
     $basePath = $host . $folder;
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
     

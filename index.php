@@ -1,7 +1,14 @@
 <?php 
     include 'server.php';
     include 'partials/header.php';
- ?>
+?>
+<?php if (!empty($_GET['roomNumber'])) { ?>
+    <div class="alert alert-danger">
+        Hai cancellato la stanza numero <?php echo $_GET['roomNumber'] ?>
+    </div>
+        
+<?php   } ?>
+
 
 <div class="row">
     <div class="col-12">
