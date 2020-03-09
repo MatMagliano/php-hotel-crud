@@ -1,5 +1,5 @@
 <?php 
-    include_once 'server.php';
+    include_once __DIR__ . '/../server.php';
  ?>
 <!DOCTYPE html>
 <html lang="en">

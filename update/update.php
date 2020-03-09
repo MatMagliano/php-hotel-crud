@@ -1,6 +1,11 @@
 <?php 
   include __DIR__ . "/../db.php";
   include __DIR__ . '/../partials/header.php';
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn && $conn->connect_error) {
+        echo 'errore'.$conn->connect_error;die();
+    }
 
   if (!empty($_GET['id'])) {
     $idRoom = $_GET['id'];
@@ -33,26 +38,13 @@
           <input class="form-control" type="text" name="floor" value="<?php echo $room['floor'] ?>">
         </div>
         <div class="form-group">
-          <input type="hidden" name="id" value="">
+          <input type="hidden" name="id" value="<?php echo $room['id'] ?>">
           <input class="btn btn-primary form-control" type="submit"  value="Salva">
         </div>
       </form>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <?php 
